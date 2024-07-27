@@ -1,1 +1,1 @@
-# C867-Foundations-Project
+# C867-Applications-Project
