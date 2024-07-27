@@ -1,0 +1,1 @@
+enum degreeProgram {SECURITY, NETWORK, SOFTWARE};
