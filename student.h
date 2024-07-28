@@ -47,13 +47,16 @@ using namespace std;
 
 class Student {
 	public:
-	   void StudentInformation(int StudentID, string firstName, string lastName, string emailAddress, int age, string threecoursesArray);
+	//Mutator Method
+	   void setStudentInformation(int StudentID, string firstName, string lastName, string emailAddress, int age, string threecoursesArray[3]);
+	   //Accessor Methods
 	   int getStudentID() const;
        std::string getfirstName() const;
        std::string getlastName() const;
 	   std::string getemailAddress() const;
 	   int getAge() const;
 	   std::string getthreeCoursesArray() const;
+	   void Print() const;
 	   private:
 	      int ID;
 		  std::string fName;
@@ -64,4 +67,4 @@ class Student {
 
 };
 
-#endif // STUDENT_H
+#endif 
