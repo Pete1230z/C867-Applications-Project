@@ -40,9 +40,10 @@ a.  Parse each set of data identified in the “studentData Table.”
 b.  Add each student object to classRosterArray.*/
 #include "student.h"
 #include <string>
+#include <array> // Include the array header
 using namespace std;
 
-void Student::setStudentInformation(int StudentID, string firstName, string lastName, string emailAddress, int age, string threecoursesArray[3]){
+void Student::setStudentInformation(int StudentID, string firstName, string lastName, string emailAddress, int age, array<string, 4> fourCoursesArray, degreeProgram degree){
 
 }
 
