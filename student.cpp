@@ -38,24 +38,14 @@ E.  Create a Roster class (roster.cpp) by doing the following:
 a.  Parse each set of data identified in the “studentData Table.”
 
 b.  Add each student object to classRosterArray.*/
+#include <iostream>
 #include "student.h"
 #include <string>
 #include <array> // Include the array header
 using namespace std;
 
 void Student::setStudentInformation(string studentID, string firstName, string lastName, string emailAddress, int age, array<string, 4> fourCoursesArray, degreeProgram degree){
-
-	void Student::setStudentID(string studentID) {
-		this->studentID = studentID;
-	}
-
-	void Student::setFirstName(string firstName) {
-		this->firstName = firstName;
-	}
-
-	void Student::setLastName(string lastName) {
-		this->lastName = lastName;
-	}
+	this->studentID = studentID;
 	this->firstName = firstName;
 	this->lastName = lastName;
 	this->emailAddress = emailAddress;
@@ -64,4 +54,34 @@ void Student::setStudentInformation(string studentID, string firstName, string l
 	this->degree = degree;
 }
 
+	void Student::setStudentID(string studentID) {
+    this->studentID = studentID;
+    }
+
+	void Student::setFirstName(string firstName) {
+		this->firstName = firstName;
+	}
+
+	void Student::setLastName(string lastName) {
+		this->lastName = lastName;
+	}
+
+	void Student::setEmailAddress(string emailAddress){
+		this->emailAddress = emailAddress;
+	}
+
+	void Student::setAge(int age){
+		this->age = age;
+	}
+
+	void Student::setFourCoursesArray(array<string, 4> fourCoursesArray){
+		this->fourCoursesArray = fourCoursesArray;
+	}
+
+	void Student::setDegreeProgram(degreeProgram degree){
+		this->degree = degree;
+	}
+
+
+	
 
