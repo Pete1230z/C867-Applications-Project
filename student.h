@@ -50,24 +50,24 @@ using namespace std;
 class Student {
 	public:
 	//Mutator Method
-	   void setStudentInformation(int StudentID, string firstName, string lastName, string emailAddress, int age, string threeCoursesArray[4], degreeProgram);
+	   void setStudentInformation(int StudentID, string firstName, string lastName, string emailAddress, int age, array<string, 4> fourCoursesArray, degreeProgram degree);
 	   //Accessor Methods
 	   int getStudentID() const;
        std::string getFirstName() const;
        std::string getLastName() const;
 	   std::string getEmailAddress() const;
 	   int getAge() const;
-	   std::string getThreeCoursesArray() const;
+	   std::array<std::string, 4> getFourCoursesArray() const;
 	   void Print() const;
 	   degreeProgram getDegreeProgram() const; 
 
 	   private:
 	      int ID;
 		  std::string fName;
-		  std::string lNAME;
+		  std::string lName;
 		  std::string email;
 		  int pvtAge;
-		  std::string threeCourses[4];
+		  std::string FourCourses[4];
 		  degreeProgram degree;
 
 };
