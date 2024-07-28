@@ -43,27 +43,32 @@ b.  Add each student object to classRosterArray.*/
 #define STUDENT_H
 
 #include <string>
+#include "degree.h"
+
 using namespace std;
 
 class Student {
 	public:
 	//Mutator Method
-	   void setStudentInformation(int StudentID, string firstName, string lastName, string emailAddress, int age, string threecoursesArray[3]);
+	   void setStudentInformation(int StudentID, string firstName, string lastName, string emailAddress, int age, string threeCoursesArray[4], degreeProgram);
 	   //Accessor Methods
 	   int getStudentID() const;
-       std::string getfirstName() const;
-       std::string getlastName() const;
-	   std::string getemailAddress() const;
+       std::string getFirstName() const;
+       std::string getLastName() const;
+	   std::string getEmailAddress() const;
 	   int getAge() const;
-	   std::string getthreeCoursesArray() const;
+	   std::string getThreeCoursesArray() const;
 	   void Print() const;
+	   degreeProgram getDegreeProgram() const; 
+
 	   private:
 	      int ID;
 		  std::string fName;
 		  std::string lNAME;
 		  std::string email;
 		  int pvtAge;
-		  std::string threecourses;
+		  std::string threeCourses[4];
+		  degreeProgram degree;
 
 };
 

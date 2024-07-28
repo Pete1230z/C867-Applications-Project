@@ -2,5 +2,9 @@
  
 
 Note: This information should be included in the degree.h file.*/
+#ifndef DEGREE_H
+#define DEGREE_H
 
 enum degreeProgram {SECURITY, NETWORK, SOFTWARE};
+
+#endif
