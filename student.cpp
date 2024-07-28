@@ -43,8 +43,25 @@ b.  Add each student object to classRosterArray.*/
 #include <array> // Include the array header
 using namespace std;
 
-void Student::setStudentInformation(int StudentID, string firstName, string lastName, string emailAddress, int age, array<string, 4> fourCoursesArray, degreeProgram degree){
+void Student::setStudentInformation(string studentID, string firstName, string lastName, string emailAddress, int age, array<string, 4> fourCoursesArray, degreeProgram degree){
 
+	void Student::setStudentID(string studentID) {
+		this->studentID = studentID;
+	}
+
+	void Student::setFirstName(string firstName) {
+		this->firstName = firstName;
+	}
+
+	void Student::setLastName(string lastName) {
+		this->lastName = lastName;
+	}
+	this->firstName = firstName;
+	this->lastName = lastName;
+	this->emailAddress = emailAddress;
+	this->age = age;
+	this->fourCoursesArray = fourCoursesArray;
+	this->degree = degree;
 }
 
 
