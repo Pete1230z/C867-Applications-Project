@@ -59,6 +59,7 @@ class Student {
 	   std::array<int, 3> getDaysInCourse() const;
 	   void printDaysInCourse() const;
 	   DegreeProgram getDegreeProgram() const; 
+	   void Print() const;
 
 	   private:
 	      string studentID;
@@ -68,8 +69,6 @@ class Student {
 		  int age;
 		  array<int, 3> daysInCourse;
 		  DegreeProgram degreeProgram;
-		  void printAll() const;
-
 };
 
 #endif 
