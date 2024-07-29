@@ -106,6 +106,11 @@ void Student::setStudentInformation(string studentID, string firstName, string l
 		return degreeProgram;
 	}
 
+	void Student::printAll() {
+		cout << getStudentID() << "\t";
+		cout << "First Name: " << getFirstName() << "\t";
+	}
+
 
 	
 
