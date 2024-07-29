@@ -1,22 +1,4 @@
-/*D.  For the Student class, do the following:
-
-1.  Create the class Student  in the files student.h and student.cpp, which includes each of the following variables:
-
-•  student ID
-
-•  first name
-
-•   last name
-
-•  email address
-
-•  age
-
-•  array of number of days to complete each course
-
-•  degree program
-
-2.  Create each of the following functions in the Student class:
+/*2.  Create each of the following functions in the Student class:
 
 a.  an accessor (i.e., getter) for each instance variable from part D1
 
@@ -27,31 +9,39 @@ c.  All external access and changes to any instance variables of the Student cla
 d.  constructor using all of the input parameters provided in the table
 
 e.  print() to print specific student data
+
+3.  Define the following functions:
+
+a.  public void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram)  that sets the instance variables from part D1 and updates the roster.
+
+b.  public void remove(string studentID)  that removes students from the roster by student ID. If the student ID does not exist, the function prints an error message indicating that the student was not found.
+
+c. public void printAll() that prints a complete tab-separated list of student data in the provided format: A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security. The printAll() function should loop through all the students in classRosterArray and call the print() function for each student.
+
+d.  public void printAverageDaysInCourse(string studentID)  that correctly prints a student’s average number of days in the three courses. The student is identified by the studentID parameter.
+
+e.  public void printInvalidEmails() that verifies student email addresses and displays all invalid email addresses to the user.
  
 
-E.  Create a Roster class (roster.cpp) by doing the following:
+Note: A valid email should include an at sign ('@') and period ('.') and should not include a space (' ').
+ 
 
-1.  Create an array of pointers, classRosterArray, to hold the data provided in the “studentData Table.”
-
-2.  Create a student object for each student in the data table and populate classRosterArray.
-
-a.  Parse each set of data identified in the “studentData Table.”
-
-b.  Add each student object to classRosterArray.*/
+f.  public void printByDegreeProgram(DegreeProgram degreeProgram) that prints out student information for a degree program specified by an enumerated type.*/
+ 
 #include <iostream>
 #include "student.h"
 #include <string>
 #include <array> // Include the array header
 using namespace std;
 
-void Student::setStudentInformation(string studentID, string firstName, string lastName, string emailAddress, int age, array<string, 4> fourCoursesArray, degreeProgram degree){
+void Student::setStudentInformation(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram){
 	this->studentID = studentID;
 	this->firstName = firstName;
 	this->lastName = lastName;
 	this->emailAddress = emailAddress;
 	this->age = age;
-	this->fourCoursesArray = fourCoursesArray;
-	this->degree = degree;
+	this->daysInCourse = {daysInCourse1, daysInCourse2, daysInCourse3};
+	this->degreeProgram = degreeProgram;
 }
 
 	void Student::setStudentID(string studentID) {
@@ -74,12 +64,12 @@ void Student::setStudentInformation(string studentID, string firstName, string l
 		this->age = age;
 	}
 
-	void Student::setFourCoursesArray(array<string, 4> fourCoursesArray){
-		this->fourCoursesArray = fourCoursesArray;
+	void Student::setDaysInCourse(int daysInCourse1, int daysInCourse2, int daysInCourse3){
+		this->daysInCourse = {daysInCourse1, daysInCourse2, daysInCourse3};
 	}
 
-	void Student::setDegreeProgram(degreeProgram degree){
-		this->degree = degree;
+	void Student::setDegreeProgram(DegreeProgram degreeProgram){
+		this->degreeProgram = degreeProgram;
 	}
 
 
