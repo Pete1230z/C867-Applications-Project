@@ -109,6 +109,10 @@ void Student::setStudentInformation(string studentID, string firstName, string l
 	void Student::printAll() {
 		cout << getStudentID() << "\t";
 		cout << "First Name: " << getFirstName() << "\t";
+		cout << "Last Name: "  << getLastName() << "\t";
+		cout << "Age: " << age << "\t";
+		cout << "daysInCourse: {" << printDaysInCourse() << "} ";
+		cout << "Degree Program: " << degreeProgram << endl;
 	}
 
 
