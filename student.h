@@ -38,8 +38,10 @@ using namespace std;
 
 class Student {
 	public:
-	//Mutator Method
+	   //Constructor
 	   void Student::setStudentInformation(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
+
+	   //Mutator Method
 	   void setStudentID(string studentID);
 	   void setFirstName(string firstName);
 	   void setLastName(string lastName);
@@ -49,14 +51,15 @@ class Student {
 	   void setDegreeProgram(DegreeProgram degreeProgram);
 
 	   //Accessor Methods
-	   std::string getStudentID() const;
-       std::string getFirstName() const;
-       std::string getLastName() const;
-	   std::string getEmailAddress() const;
+	   string getStudentID() const;
+       string getFirstName() const;
+       string getLastName() const;
+	   string getEmailAddress() const;
 	   int getAge() const;
 	   std::array<int, 3> getDaysInCourse() const;
-	   void Print() const;
+	   void printDaysInCourse() const;
 	   DegreeProgram getDegreeProgram() const; 
+	   void printAll() const;
 
 	   private:
 	      string studentID;
@@ -64,7 +67,7 @@ class Student {
 		  string lastName;
 		  string emailAddress;
 		  int age;
-		  std::array<int, 3> daysInCourse;
+		  array<int, 3> daysInCourse;
 		  DegreeProgram degreeProgram;
 
 };

@@ -72,6 +72,40 @@ void Student::setStudentInformation(string studentID, string firstName, string l
 		this->degreeProgram = degreeProgram;
 	}
 
+	string Student::getStudentID() const {
+		return studentID;
+	}
+
+	string Student::getFirstName() const {
+		return firstName;
+	}
+
+	string Student::getLastName() const {
+		return lastName;
+	}
+
+	string Student::getEmailAddress() const {
+		return emailAddress;
+	}
+
+	int Student::getAge() const {
+		return age;
+	}
+
+	array<int, 3> Student::getDaysInCourse() const {
+        return daysInCourse;
+    }
+
+    void Student::printDaysInCourse() const {
+        for (int i = 0; i < 3; i++) {
+        cout << daysInCourse[i] << " ";
+    }
+    }
+
+    DegreeProgram Student::getDegreeProgram() const {
+		return degreeProgram;
+	}
+
 
 	
 
