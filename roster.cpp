@@ -25,3 +25,9 @@ Note: A valid email should include an at sign ('@') and period ('.') and should 
  
 
 f.  public void printByDegreeProgram(DegreeProgram degreeProgram) that prints out student information for a degree program specified by an enumerated type.*/
+
+#include <iostream>
+#include <string>
+#include "roster.h"
+
+using namespace std;
