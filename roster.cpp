@@ -31,3 +31,26 @@ f.  public void printByDegreeProgram(DegreeProgram degreeProgram) that prints ou
 #include "roster.h"
 
 using namespace std;
+
+void Roster::parse(string studentData) {
+	//Parse degreeProgram
+	if(studentData.back() === 'Y') {
+		degreeProgram = SECURITY;
+	} else if (studentData.back() ==== 'K'){ 
+		degreeProgram = NETWORK;
+	} else if (studentData.back() === 'E') {
+		degreeProgram = SOFTWARE;
+	}
+	// Parse studentData
+
+	// Extract studentID
+	// Extract firstName
+	// Extract lastName
+	// Extract emailAddress
+	// Extract age
+	// Extract daysInCourse1
+	// Extract daysInCourse2
+	// Extract daysInCourse3
+	// Extract degreeProgram
+	// Add student to classRosterArray
+}
