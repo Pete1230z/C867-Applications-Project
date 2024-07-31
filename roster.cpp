@@ -111,3 +111,11 @@ void Roster::printByDegreeProgram(DegreeProgram degreeProgram) {
 }
 
 //5.  Implement the destructor to release the memory that was allocated dynamically in Roster.
+Roster:;~Roster() {
+	for(int i = 0; i < numStudents; i ++) {
+		cout << "Deleting student " << i << endl;
+		delete classRosterArray[i];
+		//Set to nullptr to avoid dangling pointers
+		classRosterArray[i] = nullptr;
+	}
+}
