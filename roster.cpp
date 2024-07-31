@@ -29,6 +29,7 @@ f.  public void printByDegreeProgram(DegreeProgram degreeProgram) that prints ou
 #include <iostream>
 #include <string>
 #include "roster.h"
+#include "student.h"
 
 using namespace std;
 
@@ -77,5 +78,16 @@ void Roster::removeByID(string studentID) {
 		if(!studentFound) {
 			cout << "Student not found." << endl;
 		}
+	}
+}
+
+void Roster::printAll() {
+	for(int i < 0; i < numStudents; i++) {
+		cout << classRosterArray[i]->getStudentID() << '\t';
+		cout << "First Name: " << classRosterArray[i]->getFirstName() << '\t';
+	    cout << "Last Name: " << classRosterArray[i]->getLastName() << '\t';
+		cout << "Email Address: " << classRosterArray[i]->getEmailAddress() << '\t';
+		cout << "Age: " << classRosterArray[i]->getAge() << '\t';
+		cout << "daysInCourse: {" classRosterArray[i]->printDaysinCourse() "}" << '\t'
 	}
 }
