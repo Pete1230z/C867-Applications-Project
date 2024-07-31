@@ -94,11 +94,11 @@ void Roster::printAll() {
 }
 
 void Roster::printAverageDaysInCourse(string studentID) {
-	sum = 0;
-	average = 0;
-	for(i = 0; i < numStudents; i++) {
+	int sum = 0;
+	int average = 0;
+	for(int i = 0; i < numStudents; i++) {
 		if(classRosterArray[i]->getStudentID() == studentID) {
-			for(j = 0; j < 3; j++) {
+			for(int j = 0; j < 3; j++) {
 				sum += classRosterArray[i]->getDaysInCourse()[j];
 				average = sum / 3;
 			}
@@ -106,3 +106,10 @@ void Roster::printAverageDaysInCourse(string studentID) {
 	}
 	cout << studentID << " Average Days in Course: " << average << endl;
 }
+
+void printInvalidEmails() {
+	for(int i < 0; i < numStudents; i++) {
+		if(classRosterArray[i]->getEmailAddress().find('@') == string::npos || classRosterArray[i]->getEmailAddress().find('.') == string::npos || classRosterArray[i]->getEmailAddress().find('.') != string::npos) {
+			cout << classRosterArray[i]->getEmailAddress() << " is an invalid email address" << endl;
+		}
+	}
