@@ -63,3 +63,13 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 	classRosterArray = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeProgram);
 	index++;
 }
+
+void Roster::removeByID(string studentID) {
+	for(int i = 0; i <= numStudents; i++) {
+		if(classRosterArray[i] != nullptr && classRosterArray[i]->getStudentID() == studentID) {
+			classRosterArray[i] = nullptr;
+		} else {
+		cout << "Student not found" << endl;
+		}
+	}
+}
