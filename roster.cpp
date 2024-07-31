@@ -65,11 +65,17 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 }
 
 void Roster::removeByID(string studentID) {
-	for(int i = 0; i <= numStudents; i++) {
+	//If set to less than or equal to numStudents, it will go out of bounds
+	//Need only to check if the student is found
+	bool studentFound = false;
+	for(int i = 0; i < numStudents; i++) {
 		if(classRosterArray[i] != nullptr && classRosterArray[i]->getStudentID() == studentID) {
 			classRosterArray[i] = nullptr;
-		} else {
-		cout << "Student not found" << endl;
+			studentFound = true;
+		}
+		//Needs to be outside of the loop to print only once
+		if(!studentFound) {
+			cout << "Student not found." << endl;
 		}
 	}
 }
