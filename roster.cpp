@@ -89,6 +89,20 @@ void Roster::printAll() {
 		cout << "Email Address: " << classRosterArray[i]->getEmailAddress() << '\t';
 		cout << "Age: " << classRosterArray[i]->getAge() << '\t';
 		cout << "daysInCourse: {" << classRosterArray[i]->printDaysInCourse() << "}" << '\t';
-		cout << DegreeProgramString[classRosterArray[i]->getDegreeProgram()] << endl;	
+		cout << DegreeProgram[classRosterArray[i]->getDegreeProgram()] << endl;	
 	}
+}
+
+void Roster::printAverageDaysInCourse(string studentID) {
+	sum = 0;
+	average = 0;
+	for(i = 0; i < numStudents; i++) {
+		if(classRosterArray[i]->getStudentID() == studentID) {
+			for(j = 0; j < 3; j++) {
+				sum += classRosterArray[i]->getDaysInCourse()[j];
+				average = sum / 3;
+			}
+		}
+	}
+	cout << studentID << " Average Days in Course: " << average << endl;
 }
