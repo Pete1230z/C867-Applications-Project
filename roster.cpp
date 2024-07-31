@@ -73,12 +73,14 @@ void Roster::removeByID(string studentID) {
 		if(classRosterArray[i] != nullptr && classRosterArray[i]->getStudentID() == studentID) {
 			classRosterArray[i] = nullptr;
 			studentFound = true;
+			cout << "Student " << studentID << " removed." << endl;
 		}
 	}
 	//Needs to be outside of the loop to print only once
 	if(!studentFound) {
 		cout << "Student not found." << endl;
 	}
+	this->printAll();
 }
 
 void Roster::printAll() {
@@ -100,7 +102,8 @@ void Roster::printAverageDaysInCourse(string studentID) {
 		if(classRosterArray[i]->getStudentID() == studentID) {
 			for(int j = 0; j < 3; j++) {
 				sum += classRosterArray[i]->getDaysInCourse()[j];
-				average = sum / 3;
+				//Need 3.0 so that there is a floating point average
+				average = sum / 3.0;
 			}
 		}
 	}
@@ -114,3 +117,5 @@ void Roster::printInvalidEmails() {
 		}
 	}
 }
+
+void Roster::printByDegreeProgram

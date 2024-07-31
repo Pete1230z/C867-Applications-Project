@@ -33,8 +33,7 @@ f.  public void printByDegreeProgram(DegreeProgram degreeProgram) that prints ou
 using namespace std;
 
 class Roster {
-
-	public:
+public:
 	const static int numStudents = 5;
 	Student* classRosterArray[numStudents];
 	void parse(string studentData);
@@ -43,5 +42,8 @@ class Roster {
 	void printAll();
 	void printAverageDaysInCourse(string studentID);
 	void printInvalidEmails();
+	void printByDegreeProgram(DegreeProgram degreeProgram);
 
+private:
+    int index = 0;
 }
