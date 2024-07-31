@@ -33,24 +33,33 @@ f.  public void printByDegreeProgram(DegreeProgram degreeProgram) that prints ou
 using namespace std;
 
 void Roster::parse(string studentData) {
+	//Array to hold parsed data
+	string parsedData[9];
+	size_t pos = 0;
+	string delimiter = ",";
+	// Parse all data in the setStudentInformation constructor
+    for(int i = 0; i < 9; i++) { 
+		pos =studentData.find(delimiter);
+		parsedData[i] = studentData.substr(0,pos);
+		studentData.erase(0, pos + delimiter.length());
+	} 
+		//Ensures the last element is added because the last element does not have a comma
+		parsedData[8] = studentData;
+	
 	//Parse degreeProgram
-	if(studentData.back() === 'Y') {
+	if(studentData.back() == 'Y') {
 		degreeProgram = SECURITY;
-	} else if (studentData.back() ==== 'K'){ 
+	} else if (studentData.back() == 'K'){ 
 		degreeProgram = NETWORK;
-	} else if (studentData.back() === 'E') {
+	} else if (studentData.back() == 'E') {
 		degreeProgram = SOFTWARE;
 	}
-	// Parse studentData
-
-	// Extract studentID
-	// Extract firstName
-	// Extract lastName
-	// Extract emailAddress
-	// Extract age
-	// Extract daysInCourse1
-	// Extract daysInCourse2
-	// Extract daysInCourse3
-	// Extract degreeProgram
 	// Add student to classRosterArray
+	add(parsedData[0], parsedData[1], parsedData[2], parsedData[3], stoi(parsedData[4]), stoi(parsedData[5]), stoi(parsedData[6]), stoi(parsedData[7]), degreeProgram);
+}
+
+void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
+	int daysInCourse[3] = {daysInCourse1, daysInCourse2, daysInCourse3};
+	classRosterArray = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeProgram);
+	index++;
 }
