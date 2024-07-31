@@ -61,7 +61,7 @@ void Roster::parse(string studentData) {
 
 void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
 	int daysInCourse[3] = {daysInCourse1, daysInCourse2, daysInCourse3};
-	classRosterArray = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeProgram);
+	classRosterArray[index] = new Student(studentID, firstName, lastName, emailAddress, age, daysInCourse, degreeProgram);
 	index++;
 }
 
@@ -74,20 +74,21 @@ void Roster::removeByID(string studentID) {
 			classRosterArray[i] = nullptr;
 			studentFound = true;
 		}
-		//Needs to be outside of the loop to print only once
-		if(!studentFound) {
-			cout << "Student not found." << endl;
-		}
+	}
+	//Needs to be outside of the loop to print only once
+	if(!studentFound) {
+		cout << "Student not found." << endl;
 	}
 }
 
 void Roster::printAll() {
-	for(int i < 0; i < numStudents; i++) {
+	for(int i = 0; i < numStudents; i++) {
 		cout << classRosterArray[i]->getStudentID() << '\t';
 		cout << "First Name: " << classRosterArray[i]->getFirstName() << '\t';
-	    cout << "Last Name: " << classRosterArray[i]->getLastName() << '\t';
+		cout << "Last Name: " << classRosterArray[i]->getLastName() << '\t';
 		cout << "Email Address: " << classRosterArray[i]->getEmailAddress() << '\t';
 		cout << "Age: " << classRosterArray[i]->getAge() << '\t';
-		cout << "daysInCourse: {" classRosterArray[i]->printDaysinCourse() "}" << '\t'
+		cout << "daysInCourse: {" << classRosterArray[i]->printDaysInCourse() << "}" << '\t';
+		cout << DegreeProgramString[classRosterArray[i]->getDegreeProgram()] << endl;	
 	}
 }
