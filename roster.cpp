@@ -107,9 +107,10 @@ void Roster::printAverageDaysInCourse(string studentID) {
 	cout << studentID << " Average Days in Course: " << average << endl;
 }
 
-void printInvalidEmails() {
-	for(int i < 0; i < numStudents; i++) {
-		if(classRosterArray[i]->getEmailAddress().find('@') == string::npos || classRosterArray[i]->getEmailAddress().find('.') == string::npos || classRosterArray[i]->getEmailAddress().find('.') != string::npos) {
+void Roster::printInvalidEmails() {
+	for(int i = 0; i < numStudents; i++) {
+		if(classRosterArray[i]->getEmailAddress().find('@') == string::npos || classRosterArray[i]->getEmailAddress().find('.') == string::npos || classRosterArray[i]->getEmailAddress().find(' ') != string::npos) {
 			cout << classRosterArray[i]->getEmailAddress() << " is an invalid email address" << endl;
 		}
 	}
+}
